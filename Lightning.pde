@@ -1,7 +1,6 @@
 void setup()
 {
   size(300,300);
-  //strokeWeight(5);
   background(25,25,112);
 }
 
@@ -12,7 +11,7 @@ int endY = 0;
 
 void draw()
 {
-	
+	background(25,25,112);
 	if(Math.random() < .33)
 		stroke(255);
 	else if(Math.random() >.33 && Math.random()<.66)
@@ -41,12 +40,31 @@ void draw()
 		startX=endX;
 		startY=endY;
 	}
+
+	cloud();
 }
+
 void mousePressed()
 {
+	background(25,25,112);
+	cloud();
 	startX=150;
 	startY=0;
 	endX=150;
 	endY=0;
 }
 
+void cloud()
+{
+	noStroke();
+	fill(127,128,137);
+
+	int cloudX=0;
+	int cloudY=0;
+
+	while(cloudX<330)
+	{
+		ellipse(cloudX,cloudY,60,60);
+		cloudX=cloudX+45;
+	}
+}
